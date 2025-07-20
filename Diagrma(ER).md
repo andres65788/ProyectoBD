@@ -57,7 +57,7 @@ entity Reseñas {
   fecha
 }
 
-' Relaciones con notación gráfica de cardinalidad estándar
+' Relaciones de las tablas
 Clientes ||--o{ Pedidos 
 Clientes ||--o{ Reseñas 
 Categorias ||--o{ Productos 
