@@ -1,0 +1,1 @@
+CALL RegistrarPedido(123, 456, 2);  
