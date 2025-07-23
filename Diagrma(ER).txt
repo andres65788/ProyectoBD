@@ -66,5 +66,3 @@ Productos ||--o{ Reseñas
 Pedidos ||--o{ Detalles_Pedido 
 
 @enduml
-
-![alt text](DIAGRAMA.png)
