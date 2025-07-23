@@ -1,6 +1,6 @@
 # Claves Primarias, Foráneas y Candidatas en el Modelo de Datos
 
-## 🔑 Claves Primarias (Primary Keys)
+## Claves Primarias (Primary Keys)
 
 Las **claves primarias** son aquellos atributos o conjunto de atributos que **identifican de forma única cada registro** en una tabla.
 
@@ -15,7 +15,7 @@ Las **claves primarias** son aquellos atributos o conjunto de atributos que **id
 
 ---
 
-## 🔗 Claves Foráneas (Foreign Keys)
+## Claves Foráneas (Foreign Keys)
 
 Las **claves foráneas** son atributos en una tabla que establecen un vínculo con la **clave primaria de otra tabla**, permitiendo relacionar los datos entre diferentes entidades.
 
