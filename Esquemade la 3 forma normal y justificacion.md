@@ -91,5 +91,4 @@ La normalización hasta **3NF** permite:
 - Facilitar la integridad referencial entre tablas.
 - Optimizar la estructura para mantenimiento y escalabilidad.
 
-> Este modelo es eficiente y preparado para el sistema solicitado.
 
