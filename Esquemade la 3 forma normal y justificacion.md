@@ -1,13 +1,11 @@
-# Modelo de Base de Datos: Normalización hasta 3NF
+# Modelo de Base de Datos: Normalización hasta tercera forma fomral (3nf)
 
-Este modelo de base de datos se ha diseñado de acuerdo con la **Tercera Forma Normal (3NF)**, lo que garantiza que:
+Este modelo de base de datos se ha diseñado de acuerdo con la **3NF**, lo que garantiza que:
 
 - Cada tabla representa una sola entidad.
 - Todos los atributos no clave dependen directamente de la clave primaria.
 - Se minimizan las dependencias transitivas y la redundancia de datos.
 - Se asegura consistencia, eficiencia y facilidad de mantenimiento.
-
----
 
 ## Tablas y Atributos
 
@@ -52,14 +50,10 @@ Este modelo de base de datos se ha diseñado de acuerdo con la **Tercera Forma N
 - `comentario`: Comentario escrito por el cliente sobre el producto.
 - `fecha`: Fecha en que se publicó la reseña.
 
----
-
 ## Justificación de la Normalización a 3NF
 
 ### General
 El diseño propuesto cumple con la **Tercera Forma Normal (3NF)**. Esto significa que cada atributo no clave depende directamente de la clave primaria de su tabla. Además, se evitan dependencias transitivas y redundancia de datos, lo que garantiza integridad y eficiencia.
-
----
 
 ## Justificación por Tabla
 
