@@ -1,5 +1,4 @@
 -- Script SQL para la creación de la base de datos y tablas
--- SGBD: MySQL
 -- 1. Crear la base de datos
 CREATE DATABASE tienda_online;
 USE tienda_online;
@@ -25,7 +24,7 @@ CREATE TABLE Productos (
     id_producto INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(255) NOT NULL,
     descripcion TEXT,
-    precio DECIMAL(10, 2) NOT NULL CHECK (precio >= 0),
+    precio DECIMAL(12, 2) NOT NULL CHECK (precio >= 0),
     stock INT NOT NULL CHECK (stock >= 0),
     id_categoria INT NOT NULL,
     FOREIGN KEY (id_categoria) REFERENCES Categorias(id_categoria),
@@ -36,7 +35,7 @@ CREATE TABLE Productos (
 CREATE TABLE Pedidos (
     id_pedido INT AUTO_INCREMENT PRIMARY KEY,
     id_cliente INT NOT NULL,
-    fecha_pedido DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    fecha_pedido DATE NOT NULL DEFAULT CURRENT_DATE,
     estado ENUM('pendiente', 'enviado', 'entregado', 'cancelado') NOT NULL DEFAULT 'pendiente',
     FOREIGN KEY (id_cliente) REFERENCES Clientes(id_cliente)
 );
@@ -47,7 +46,7 @@ CREATE TABLE Detalles_Pedido (
     id_pedido INT NOT NULL,
     id_producto INT NOT NULL,
     cantidad INT NOT NULL CHECK (cantidad > 0), 
-    precio_unitario DECIMAL(10, 2) NOT NULL, 
+    precio_unitario DECIMAL(12, 2) NOT NULL, 
     FOREIGN KEY (id_pedido) REFERENCES Pedidos(id_pedido),
     FOREIGN KEY (id_producto) REFERENCES Productos(id_producto),
     UNIQUE (id_pedido, id_producto) 
@@ -60,13 +59,13 @@ CREATE TABLE Reseñas (
     id_cliente INT NOT NULL,
     calificacion INT NOT NULL CHECK (calificacion >= 1 AND calificacion <= 5),
     comentario TEXT,
-    fecha DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    fecha DATE NOT NULL DEFAULT CURRENT_DATE,
     FOREIGN KEY (id_producto) REFERENCES Productos(id_producto),
     FOREIGN KEY (id_cliente) REFERENCES Clientes(id_cliente)
 );
 
--- Añadir índices para optimización (se requieren al menos 3 en la fase de implementación)
--- Estos índices pueden mejorar el rendimiento de las consultas comunes.
+--Indices para la optimización de de uso
+-- Estos índices mejoran las consultas mmas comúnes que pueden haber en estas tablas.
 CREATE INDEX idx_productos_nombre_categoria ON Productos (nombre, id_categoria);
 CREATE INDEX idx_pedidos_cliente ON Pedidos (id_cliente);
 CREATE INDEX idx_reseñas_producto ON Reseñas (id_producto);
