@@ -1,7 +1,7 @@
 -- Script SQL para la creación de la base de datos y tablas
 -- 1. Crear la base de datos
 CREATE DATABASE tienda_online;
-USE tienda_online;
+USE Tienda_Online;
 
 -- 2. Tabla Categorias
 CREATE TABLE Categorias (
