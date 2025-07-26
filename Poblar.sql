@@ -1,63 +1,63 @@
 -- Script SQL para poblar las tablas de la base de datos de la Tienda Online
-USE tienda_online;
+USE Tienda_Online;
 
 INSERT INTO Categorias (nombre, descripcion) VALUES
-('Electrónica', 'Dispositivos electrónicos, gadgets y accesorios en lo mas actulizado del mercadow.'),
-('Hogar', 'Productos para el hogar, electrodomésticos y utensilios de cocina, limpiadores y mas.'),
+('Electronica', 'Dispositivos electronicos, gadgets y accesorios en lo mas actulizado del mercadow.'),
+('Hogar', 'Productos para el hogar, electrodomesticos y utensilios de cocina, limpiadores y mas.'),
 ('Moda', 'Ropa, calzado y accesorios para hombres y mujeres.'),
-('Libros', 'Novelas, libros de texto y literatura, terror comedia y todo para largas horas de comcimiento e ntrentenimiento.');
+('Libros', 'Novelas, libros de texto y literatura, terror comedia y todo para largas horas de comcimiento entrentenimiento.');
 
 -- Poblar la tabla Clientes (mínimo 15 clientes)
 INSERT INTO Clientes (nombre, correo, telefono, direccion) VALUES
-('Ana García', 'ana.garcia@example.com', '5511223344', 'Av. Siempre Viva 123'),
-('Juan Pérez', 'juan.perez@example.com', '1922334455', 'Calle Falsa 123'),
-('María López', 'maria.lopez@example.com', '5533445566', 'Paseo de la Reforma 456'),
+('Ana Garcia', 'ana.garcia@example.com', '5511223344', 'Av. Siempre Viva 123'),
+('Juan Perez', 'juan.perez@example.com', '1922334455', 'Calle Falsa 123'),
+('Maria Lopez', 'maria.lopez@example.com', '5533445566', 'Paseo de la Reforma 456'),
 ('Carlos Ruiz', 'carlos.ruiz@example.com', '2944556677', 'Bosques de las Lomas 789'),
-('Sofía Hernández', 'sofia.hernandez@example.com', '7755667788', 'Av. Insurgentes 987'),
-('Pedro Gómez', 'pedro.gomez@example.com', '2966778899', 'Calle San Pablo 321'),
-('Laura Díaz', 'laura.diaz@example.com', '3677889900', 'Eje Central 555'),
+('Sofia Hernandez', 'sofia.hernandez@example.com', '7755667788', 'Av. Insurgentes 987'),
+('Pedro Gomez', 'pedro.gomez@example.com', '2966778899', 'Calle San Pablo 321'),
+('Laura Diaz', 'laura.diaz@example.com', '3677889900', 'Eje Central 555'),
 ('Jorge Morales', 'jorge.morales@example.com', '4188990011', 'Calle Madero 111'),
-('Fernanda Castro', 'fernanda.castro@example.com', '1799001122', 'Av. Juárez 222'),
-('Luis Torres', 'luis.torres@example.com', '5500112233', 'Viaducto Miguel Alemán 333'),
+('Fernanda Castro', 'fernanda.castro@example.com', '1799001122', 'Av. Juarez 222'),
+('Luis Torres', 'luis.torres@example.com', '5500112233', 'Viaducto Miguel Aleman 333'),
 ('Gabriel Reyes', 'gabriel.reyes@example.com', '5511002244', 'Av. Universidad 444'),
 ('Daniela Vargas', 'daniela.vargas@example.com', '2822113355', 'Calzada de Tlalpan 555'),
-('Roberto Mendoza', 'roberto.mendoza@example.com', '23733224466', 'Periférico Sur 666'),
+('Roberto Mendoza', 'roberto.mendoza@example.com', '23733224466', 'Periferico Sur 666'),
 ('Valeria Ortiz', 'valeria.ortiz@example.com', '0144335577', 'Circuito Interior 777'),
-('Héctor Jimenez', 'hector.jimenez@example.com', '9055446688', 'Paseo de la Reforma 888');
+('Hector Jimenez', 'hector.jimenez@example.com', '9055446688', 'Paseo de la Reforma 888');
 
 -- Poblar la tabla Productos (mínimo 30 productos)
 INSERT INTO Productos (nombre, descripcion, precio, stock, id_categoria) VALUES
-('Smartphone S20', 'Teléfono móvil de última generación con cámara 4K.', 12002.99, 50, 1),
+('Smartphone S20', 'Telefono movil de ultima generacion con camara 4K.', 12002.99, 50, 1),
 ('Laptop Gamer X1', 'Potente laptop para juegos y tareas de alta demanda.', 14999.50, 25, 1),
-('Auriculares Inalámbricos', 'Auriculares con cancelación de ruido y gran autonomía.', 959.00, 150, 1),
-('Smartwatch FitPro', 'Reloj inteligente con monitor de actividad y ritmo cardíaco.', 15901.00, 75, 1),
-('Televisor 4K 57"', 'Televisor inteligente de 55 pulgadas con resolución 4K.', 65000.00, 30, 1),
+('Auriculares Inalambricos', 'Auriculares con cancelación de ruido y gran autonomia.', 959.00, 150, 1),
+('Smartwatch FitPro', 'Reloj inteligente con monitor de actividad y ritmo cardiaco.', 15901.00, 75, 1),
+('Televisor 4K 57"', 'Televisor inteligente de 57 pulgadas con resolucion 4K.', 65000.00, 30, 1),
 ('Licuadora 12 velocidades', 'Licuadora de alta potencia para batidos y jugos.', 705.50, 100, 2),
 ('Cafetera programable', 'Cafetera con temporizador y filtro permanente.', 454.00, 80, 2),
-('Sartén Antiadherente', 'Juego de sartenes de diferentes tamaños con recubrimiento antiadherente.', 552.00, 120, 2),
-('Juego de cuchillos profesional', 'Set de cuchillos de acero inoxidable con base de madera.', 850.99, 60, 2),
+('Sarten Antiadherente', 'Juego de sartenes de diferentes tamaños con recubrimiento antiadherente.', 552.00, 120, 2),
+('Juego de cuchillos profesional', 'Set de cuchillos de acero inoxidable con mango de madera.', 850.99, 60, 2),
 ('Robot de cocina', 'Robot multifuncional para preparar diversas recetas.', 2998.99, 40, 2),
 ('Robot aspirador', 'Aspiradora robotizada con mapeo de habitaciones.', 2570.00, 50, 2),
-('Microondas con grill', 'Microondas con función de grill y programas preestablecidos.', 1120.00, 70, 2),
-('Juego de toallas', 'Toallas suaves y absorbentes hechas de fibra de bambú.', 365.00, 200, 2),
-('Vaso térmico 500ml', 'Vaso de acero inoxidable que mantiene la temperatura de las bebidas.', 155.00, 300, 2),
-('Camisa de Lino Azul', 'Camisa de lino para hombre, ideal para climas cálidos.', 45.00, 90, 3),
-('Pantalón Jeans overside', 'Pantalones vaqueros ajustados con tejido elástico.', 60.00, 110, 3),
+('Microondas con grill', 'Microondas con funcion de grill y programas preestablecidos.', 1120.00, 70, 2),
+('Juego de toallas', 'Toallas suaves y absorbentes.', 365.00, 200, 2),
+('Vaso termico 500ml', 'Vaso de acero inoxidable que mantiene la temperatura de las bebidas.', 155.00, 300, 2),
+('Camisa de Lino Azul', 'Camisa de lino para hombre, ideal para climas calidos.', 45.00, 90, 3),
+('Pantalon Jeans overside', 'Pantalones vaqueros ajustados con tejido elastico.', 60.00, 110, 3),
 ('Vestido de verano floreado', 'Vestido ligero para mujer con estampado floral.', 55.00, 70, 3),
-('Zapatillas Deportivas', 'Zapatillas de running con amortiguación avanzada.', 85.00, 150, 3),
+('Zapatillas Deportivas', 'Zapatillas de running con amortiguacion avanzada.', 85.00, 150, 3),
 ('Gafas de sol', 'Gafas de sol con protección UV y lentes polarizadas.', 30.00, 250, 3),
-('Bolso de piel sintetico', 'Bolso de mano de piel genuina con múltiples compartimentos.', 120.00, 50, 3),
-('Bufanda de lino', 'Bufanda suave y cálida, perfecta para el invierno.', 40.00, 80, 3),
+('Bolso de piel sintetico', 'Bolso de mano de piel sintetica con múltiples compartimentos.', 120.00, 50, 3),
+('Bufanda de lino', 'Bufanda suave y calida, perfecta para el invierno.', 40.00, 80, 3),
 ('Corbata de seda', 'Corbata elegante para ocasiones especiales.', 25.00, 100, 3),
-('Cinturón de cuero rojo', 'Cinturón de cuero genuino con hebilla de metal.', 30.00, 120, 3),
-('Calcetines de algodón', 'Pack de 5 pares de calcetines de algodón.', 15.00, 500, 3),
-('Falda corta', 'Falda midi plisada de color neutro.', 50.00, 60, 3),
+('Cinturon de cuero rojo', 'Cinturon de cuero genuino de color rojo con hebilla de metal.', 30.00, 120, 3),
+('Calcetines de algodon', 'Pack de 5 pares de calcetines de algodon.', 15.00, 500, 3),
+('Falda corta', 'Falda corta de color marfil.', 50.00, 60, 3),
 ('Novela de misterio', 'Una intrigante novela de misterio y suspenso.', 138.50, 200, 4),
-('Libro de cocina italiana', 'Recetas clásicas de la cocina italiana.', 225.00, 150, 4),
-('Guía de viajes por Europa', 'Guía completa con consejos y rutas por Europa.', 22.00, 100, 4),
-('El Señor de los Anillos', 'Edición especial de la trilogía completa.', 652.00, 50, 4),
+('Libro de cocina italiana', 'Recetas clasicas de la cocina italiana.', 225.00, 150, 4),
+('Guia de viajes por Europa', 'Guia completa con consejos y rutas por Europa.', 22.00, 100, 4),
+('El Senor de los Anillos', 'Edicion especial de la trilogia completa.', 652.00, 50, 4),
 ('Programación en Python', 'Manual para principiantes de programación en Python.', 30.00, 75, 4),
-('Historia de México', 'Un libro de texto que narra la historia de México.', 268.00, 90, 4);
+('Historia de Mexico', 'Un libro de texto que narra la historia de Mexico.', 268.00, 90, 4);
 
 -- Poblar la tabla Pedidos (mínimo 20 pedidos)
 INSERT INTO Pedidos (id_cliente, fecha_pedido, estado) VALUES
@@ -114,13 +114,13 @@ INSERT INTO Detalles_Pedido (id_pedido, id_producto, cantidad, precio_unitario) 
 
 -- Poblar la tabla Reseñas (mínimo 10 reseñas)
 INSERT INTO Reseñas (id_producto, id_cliente, calificacion, comentario, fecha) VALUES
-(1, 1, 5, 'Excelente teléfono, la cámara es increíble.', '2025-07-05'),
-(3, 1, 4, 'Muy buenos auriculares, pero la batería podría durar más.', '2025-07-06'),
-(6, 2, 5, 'La licuadora es muy potente, ideal para batidos.', '2025-07-03 15:00:00'),
-(10, 3, 5, 'El robot de cocina ha cambiado mi vida, muy recomendable.', '2025-07-08'),
-(15, 4, 3, 'La camisa es bonita pero el tejido es un poco áspero.', '2025-07-10'),
-(26, 7, 4, 'Una novela de misterio muy entretenida.', '2025-07-12 14:00:00'),
-(27, 8, 5, 'El libro de cocina es muy útil, las recetas son fáciles.', '2025-07-14'),
+(1, 1, 5, 'Excelente telefono, la camara es increíble.', '2025-07-05'),
+(3, 1, 3, 'Muy buenos auriculares, pero la bateraa podría durar mas.', '2025-07-06'),
+(6, 2, 5, 'La licuadora es muy potente, ideal para batidos.', '2025-07-03'),
+(10, 3, 4, 'El robot de cocina ha cambiado mi vida, muy recomendable.', '2025-07-08'),
+(15, 4, 3, 'La camisa es bonita pero el tejido es un poco aspero.', '2025-07-10'),
+(26, 7, 4, 'Una novela de misterio muy entretenida.', '2025-07-12 '),
+(27, 8, 5, 'El libro de cocina es muy util, las recetas son fáciles.', '2025-07-14'),
 (2, 11, 5, 'La laptop es super rápida y funciona perfectamente para gaming.', '2025-07-16'),
-(3, 14, 5, 'Compré 5 pares de auriculares y todos funcionan perfecto.', '2025-07-17 11:00:00'),
-(6, 15, 4, 'La licuadora funciona bien, el color es un poco diferente al de la foto.', '2025-07-18');
+(3, 14, 4, 'Compre 5 pares de calcetines y estan muy suaves.', '2025-07-17'),
+(6, 15, 3, 'La licuadora funciona bien, el color es un poco diferente al de la foto.', '2025-07-18');

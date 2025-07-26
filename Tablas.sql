@@ -53,8 +53,8 @@ CREATE TABLE Detalles_Pedido (
 );
 
 -- 7. Tabla Reseñas
-CREATE TABLE Reseñas (
-    id_reseña INT AUTO_INCREMENT PRIMARY KEY,
+CREATE TABLE Resenas (
+    id_resena INT AUTO_INCREMENT PRIMARY KEY,
     id_producto INT NOT NULL,
     id_cliente INT NOT NULL,
     calificacion INT NOT NULL CHECK (calificacion >= 1 AND calificacion <= 5),
@@ -68,5 +68,5 @@ CREATE TABLE Reseñas (
 -- Estos índices mejoran las consultas mmas comúnes que pueden haber en estas tablas.
 CREATE INDEX idx_productos_nombre_categoria ON Productos (nombre, id_categoria);
 CREATE INDEX idx_pedidos_cliente ON Pedidos (id_cliente);
-CREATE INDEX idx_reseñas_producto ON Reseñas (id_producto);
-CREATE INDEX idx_reseñas_cliente ON Reseñas (id_cliente);
+CREATE INDEX idx_resenas_producto ON Resenas (id_producto);
+CREATE INDEX idx_resenas_cliente ON Resenas (id_cliente);
