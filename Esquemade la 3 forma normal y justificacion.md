@@ -1,6 +1,6 @@
-# Modelo de Base de Datos: Normalización hasta tercera forma fomral (3nf)
+# Modelo de Base de Datos: Normalización hasta la tercera forma fomral (3nf)
 
-Este modelo de base de datos se ha diseñado de acuerdo con la **3NF**, lo que garantiza que:
+Este modelo de base de datos se ha diseñado de acuerdo con la **3NF**, lo que asegura que:
 
 - Cada tabla representa una sola entidad.
 - Todos los atributos no clave dependen directamente de la clave primaria.
@@ -11,10 +11,10 @@ Este modelo de base de datos se ha diseñado de acuerdo con la **3NF**, lo que g
 
 ### Tabla: Clientes
 - `id_cliente` (PK): Identificador único del cliente.
-- `nombre`: Nombre completo del cliente.
+- `nombre`: Nombre del cliente.
 - `correo`: Dirección de correo electrónico del cliente (debe ser única).
 - `telefono`: Número de teléfono del cliente.
-- `direccion`: Dirección postal del cliente.
+- `direccion`: Codijo postal del cliente.
 
 ### Tabla: Productos
 - `id_producto` (PK): Identificador único del producto.
@@ -37,8 +37,8 @@ Este modelo de base de datos se ha diseñado de acuerdo con la **3NF**, lo que g
 
 ### Tabla: Detalles_Pedido
 - `id_detalle` (PK): Identificador único del detalle del pedido.
-- `id_pedido` (FK → Pedidos.id_pedido): Pedido al que pertenece este detalle.
-- `id_producto` (FK → Productos.id_producto): Producto incluido en este detalle.
+- `id_pedido` (FK → Pedidos.id_pedido): Pedido pertetecinte al detalle.
+- `id_producto` (FK → Productos.id_producto): Producto al que pertenece este detalle.
 - `cantidad`: Cantidad del producto solicitada en el pedido.
 - `precio_unitario`: Precio del producto en el momento del pedido.
 
@@ -59,7 +59,6 @@ El diseño propuesto cumple con la **Tercera Forma Normal (3NF)**. Esto signific
 
 ### Clientes (`id_cliente`, `nombre`, `correo`, `telefono`, `direccion`)
 - Todos los atributos dependen directamente de `id_cliente`.
-- El campo `correo` también podría ser considerado una **clave candidata** por su unicidad.
 
 ### Categorías (`id_categoria`, `nombre`, `descripcion`)
 - Atributos `nombre` y `descripcion` dependen directamente de `id_categoria`.
@@ -74,7 +73,7 @@ El diseño propuesto cumple con la **Tercera Forma Normal (3NF)**. Esto signific
 - `id_cliente` es una clave foránea que enlaza con `Clientes`, sin repetir información del cliente.
 
 ### Detalles_Pedido (`id_detalle`, `id_pedido`, `id_producto`, `cantidad`, `precio_unitario`)
-- La tabla actúa como tabla de unión para la relación muchos-a-muchos entre `Pedidos` y `Productos`.
+- La tabla actúa como una relacion de mucho a muchos `Pedidos` y `Productos`.
 - `cantidad` y `precio_unitario` dependen directamente de `id_detalle` (o de la clave compuesta `id_pedido` + `id_producto`).
 
 ### Reseñas (`id_reseña`, `id_producto`, `id_cliente`, `calificacion`, `comentario`, `fecha`)
@@ -84,10 +83,10 @@ El diseño propuesto cumple con la **Tercera Forma Normal (3NF)**. Esto signific
 
 ## Conclusión
 
-La normalización hasta **3NF** permite:
+La normalización hasta **3NF** nos permite que:
 
 - Minimizar la redundancia.
-- Evitar anomalías en inserciones, actualizaciones y eliminaciones.
+- Evitar complicaciones en inserciones, actualizaciones y eliminaciones.
 - Facilitar la integridad referencial entre tablas.
 - Optimizar la estructura para mantenimiento y escalabilidad.
 

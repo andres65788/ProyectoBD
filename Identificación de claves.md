@@ -1,4 +1,4 @@
-# Claves Primarias, Foráneas y Candidatas en el Modelo de Datos
+# Claves Primarias, Foráneas y Candidatas en este Modelo de Datos
 
 ## Claves Primarias (Primary Keys)
 
@@ -13,30 +13,30 @@ Las **claves primarias** son aquellos atributos o conjunto de atributos que **id
 - **Detalles_Pedido:** `id_detalle`
 - **Reseñas:** `id_reseña`
 
-## Claves Foráneas (Foreign Keys)
+## Claves Foráneas (Foreing Keys)
 
 Las **claves foráneas** son atributos en una tabla que establecen un vínculo con la **clave primaria de otra tabla**, permitiendo relacionar los datos entre diferentes entidades.
 
 ### Claves Foráneas por Tabla:
 
 - **Productos:**
-  - `id_categoria` → Referencia a `Categorías(id_categoria)`
+  - `id_categoria` -> Referencia a `Categorías`
 
 - **Pedidos:**
-  - `id_cliente` → Referencia a `Clientes(id_cliente)`
+  - `id_cliente` -> Referencia a `Clientes`
 
 - **Detalles_Pedido:**
-  - `id_pedido` → Referencia a `Pedidos(id_pedido)`
-  - `id_producto` → Referencia a `Productos(id_producto)`
+  - `id_pedido` -> Referencia a `Pedidos`
+  - `id_producto` -> Referencia a `Productos`
 
 - **Reseñas:**
-  - `id_producto` → Referencia a `Productos(id_producto)`
-  - `id_cliente` → Referencia a `Clientes(id_cliente)`
+  - `id_producto` -> Referencia a `Productos`
+  - `id_cliente` -> Referencia a `Clientes`
 
 ## Claves Candidatas (Candidate Keys)
 
-Las **claves candidatas** son aquellos atributos o conjunto de atributos que **pueden identificar de forma única un registro**, aunque **no necesariamente sean la clave primaria**.
+Las **claves candidatas** son aquellos atributos o conjunto de atributos que pueden identificar de forma única un registro, aunque **no necesariamente sean la clave primaria**.
 
-- En la tabla **Clientes**, el atributo `correo` puede considerarse una **clave candidata**, ya que se asume que **cada cliente tiene un correo único**.
-- Cabe destacar que todas las claves primarias también son **claves candidatas**, pero no todas las claves candidatas son elegidas como primaria.
+- En la tabla **Clientes**, el atributo `correo` puede considerarse una **clave candidata**, ya que se asume que cada cliente tiene un correo único.
+- Cabe señalar que todas las claves primarias también son **claves candidatas**, pero no todas las claves candidatas son elegidas como **claves primariaa**.
 
