@@ -15,7 +15,7 @@ BEGIN
     FROM Pedidos
     WHERE id_cliente = p_id_cliente AND estado = 'pendiente';
     IF v_pedidos_pendientes >= 5 THEN
-        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'El cliente tiene 5 o mas pedidos pendientes. No se puede registrar un nuevo pedido.';
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'El cliente tiene 5 o más pedidos pendientes. No se puede registrar un nuevo pedido.';
     ELSE
         -- Verificar si hay stock suficiente
         SELECT stock INTO v_stock_actual
@@ -40,6 +40,7 @@ END$$
 DELIMITER ;
 
 -- Procedimiento2: Registrar una reseña
+
 DELIMITER $$
 CREATE PROCEDURE RegistrarResena(
     IN p_id_producto INT,
@@ -58,7 +59,7 @@ BEGIN
         -- Insertar la reseña
         INSERT INTO Resenas (id_producto, id_cliente, calificacion, comentario)
         VALUES (p_id_producto, p_id_cliente, p_calificacion, p_comentario);
-        SELECT 'Resena registrada exitosamente.' AS Mensaje;
+        SELECT 'Reseña registrada exitosamente.' AS Mensaje;
     ELSE
         SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'El cliente no ha comprado este producto.';
     END IF;
@@ -66,6 +67,7 @@ END$$
 DELIMITER ;
 
 -- Procedimiento3: Actualizar el stock de un producto
+
 DELIMITER $$
 CREATE PROCEDURE ActualizarStockProducto(
     IN p_id_producto INT,
@@ -79,6 +81,7 @@ END$$
 DELIMITER ;
 
 -- Procedimiento4: Cambiar el estado de un pedido
+
 DELIMITER $$
 CREATE PROCEDURE CambiarEstadoPedido(
     IN p_id_pedido INT,
@@ -91,7 +94,9 @@ BEGIN
 END$$
 DELIMITER ;
 
+
 -- Procedimiento5: Eliminar reseñas de un producto
+
 DELIMITER $$
 CREATE PROCEDURE EliminarResenasProducto(
     IN p_id_producto INT
@@ -103,6 +108,7 @@ END$$
 DELIMITER ;
 
 -- Procedimiento6: Agregar un nuevo producto
+
 DELIMITER $$
 CREATE PROCEDURE AgregarNuevoProducto(
     IN p_nombre VARCHAR(255),
@@ -113,21 +119,25 @@ CREATE PROCEDURE AgregarNuevoProducto(
 )
 BEGIN
     DECLARE v_duplicado INT;
+
     -- Verificar si ya existe un producto con el mismo nombre y categoría
     SELECT COUNT(*) INTO v_duplicado
     FROM Productos
     WHERE nombre = p_nombre AND id_categoria = p_id_categoria;
+
     IF v_duplicado = 0 THEN
         INSERT INTO Productos (nombre, descripcion, precio, stock, id_categoria)
         VALUES (p_nombre, p_descripcion, p_precio, p_stock, p_id_categoria);
+        
         SELECT 'Producto agregado exitosamente.' AS Mensaje;
     ELSE
-        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Ya existe un producto con el mismo nombre y categoria.';
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Ya existe un producto con el mismo nombre y categoría.';
     END IF;
 END$$
 DELIMITER ;
 
 -- Procedimiento7: Actualizar la información de un cliente
+
 DELIMITER $$
 CREATE PROCEDURE ActualizarCliente(
     IN p_id_cliente INT,
@@ -143,6 +153,7 @@ END$$
 DELIMITER ;
 
 -- Procedimiento8: Generar un reporte de productos con stock bajo
+
 DELIMITER $$
 CREATE PROCEDURE ReporteStockBajo()
 BEGIN
