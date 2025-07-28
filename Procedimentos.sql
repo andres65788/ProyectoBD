@@ -15,7 +15,7 @@ BEGIN
     FROM Pedidos
     WHERE id_cliente = p_id_cliente AND estado = 'pendiente';
     IF v_pedidos_pendientes >= 5 THEN
-        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'El cliente tiene 5 o más pedidos pendientes. No se puede registrar un nuevo pedido.';
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'El cliente tiene 5 o mas pedidos pendientes. No se puede registrar un nuevo pedido.';
     ELSE
         -- Verificar si hay stock suficiente
         SELECT stock INTO v_stock_actual
@@ -59,7 +59,7 @@ BEGIN
         -- Insertar la reseña
         INSERT INTO Resenas (id_producto, id_cliente, calificacion, comentario)
         VALUES (p_id_producto, p_id_cliente, p_calificacion, p_comentario);
-        SELECT 'Reseña registrada exitosamente.' AS Mensaje;
+        SELECT 'Resena registrada exitosamente.' AS Mensaje;
     ELSE
         SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'El cliente no ha comprado este producto.';
     END IF;
@@ -131,7 +131,7 @@ BEGIN
         
         SELECT 'Producto agregado exitosamente.' AS Mensaje;
     ELSE
-        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Ya existe un producto con el mismo nombre y categoría.';
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Ya existe un producto con el mismo nombre y categoria.';
     END IF;
 END$$
 DELIMITER ;
