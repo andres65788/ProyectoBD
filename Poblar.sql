@@ -113,7 +113,7 @@ INSERT INTO Detalles_Pedido (id_pedido, id_producto, cantidad, precio_unitario) 
 
 
 -- Poblar la tabla Reseñas (mínimo 10 reseñas)
-INSERT INTO Reseñas (id_producto, id_cliente, calificacion, comentario, fecha) VALUES
+INSERT INTO Resenas (id_producto, id_cliente, calificacion, comentario, fecha) VALUES
 (1, 1, 5, 'Excelente telefono, la camara es increíble.', '2025-07-05'),
 (3, 1, 3, 'Muy buenos auriculares, pero la bateraa podría durar mas.', '2025-07-06'),
 (6, 2, 5, 'La licuadora es muy potente, ideal para batidos.', '2025-07-03'),
