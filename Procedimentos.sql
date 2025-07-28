@@ -103,7 +103,7 @@ CREATE PROCEDURE EliminarResenasProducto(
 )
 BEGIN
     DELETE FROM Resenas WHERE id_producto = p_id_producto;
-    SELECT 'Reseñas eliminadas exitosamente.' AS Mensaje;
+    SELECT 'Resenas eliminadas exitosamente.' AS Mensaje;
 END$$
 DELIMITER ;
 
