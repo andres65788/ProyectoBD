@@ -42,7 +42,7 @@ DELIMITER ;
 -- Procedimiento2: Registrar una reseña
 
 DELIMITER $$
-CREATE PROCEDURE RegistrarReseña(
+CREATE PROCEDURE RegistrarResena(
     IN p_id_producto INT,
     IN p_id_cliente INT,
     IN p_calificacion TINYINT,

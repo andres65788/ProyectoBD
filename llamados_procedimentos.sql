@@ -14,7 +14,7 @@ CALL ActualizarStockProducto(8, 5);
 CALL CambiarEstadoPedido(27, 'enviado');
 
 -- Eliminar reseñas de un producto
-CALL EliminarReseñasProducto(12);
+CALL EliminarResenasProducto(12);
 
 -- Agregar un nuevo producto
 CALL AgregarNuevoProducto('Smartwatch X200', 'Reloj inteligente con monitor cardiaco', 199.99, 50, 3);
