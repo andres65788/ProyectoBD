@@ -1,7 +1,7 @@
 -- Script SQL para la creación de la base de datos y tablas
 -- 1. Crear la base de datos
 CREATE DATABASE tienda_online;
-USE Tienda_Online;
+USE tienda_online; -- Use lowercase for consistency, though MySQL is often case-insensitive for database names on Windows
 
 -- 2. Tabla Categorias
 CREATE TABLE Categorias (
@@ -45,11 +45,11 @@ CREATE TABLE Detalles_Pedido (
     id_detalle INT AUTO_INCREMENT PRIMARY KEY,
     id_pedido INT NOT NULL,
     id_producto INT NOT NULL,
-    cantidad INT NOT NULL CHECK (cantidad > 0), 
-    precio_unitario DECIMAL(12, 2) NOT NULL, 
+    cantidad INT NOT NULL CHECK (cantidad > 0),
+    precio_unitario DECIMAL(12, 2) NOT NULL,
     FOREIGN KEY (id_pedido) REFERENCES Pedidos(id_pedido),
     FOREIGN KEY (id_producto) REFERENCES Productos(id_producto),
-    UNIQUE (id_pedido, id_producto) 
+    UNIQUE (id_pedido, id_producto)
 );
 
 -- 7. Tabla Reseñas
@@ -64,8 +64,8 @@ CREATE TABLE Resenas (
     FOREIGN KEY (id_cliente) REFERENCES Clientes(id_cliente)
 );
 
---Indices para la optimización de de uso
--- Estos índices mejoran las consultas mmas comúnes que pueden haber en estas tablas.
+-- Indices para la optimización de uso
+-- Estos índices mejoran las consultas más comunes que pueden haber en estas tablas.
 CREATE INDEX idx_productos_nombre_categoria ON Productos (nombre, id_categoria);
 CREATE INDEX idx_pedidos_cliente ON Pedidos (id_cliente);
 CREATE INDEX idx_resenas_producto ON Resenas (id_producto);
