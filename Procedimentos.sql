@@ -57,7 +57,7 @@ BEGIN
     WHERE dp.id_producto = p_id_producto AND p.id_cliente = p_id_cliente;
     IF v_ha_comprado > 0 THEN
         -- Insertar la reseña
-        INSERT INTO Reseñas (id_producto, id_cliente, calificacion, comentario)
+        INSERT INTO Resenas (id_producto, id_cliente, calificacion, comentario)
         VALUES (p_id_producto, p_id_cliente, p_calificacion, p_comentario);
         SELECT 'Reseña registrada exitosamente.' AS Mensaje;
     ELSE
@@ -98,11 +98,11 @@ DELIMITER ;
 -- Procedimiento5: Eliminar reseñas de un producto
 
 DELIMITER $$
-CREATE PROCEDURE EliminarReseñasProducto(
+CREATE PROCEDURE EliminarResenasProducto(
     IN p_id_producto INT
 )
 BEGIN
-    DELETE FROM Reseñas WHERE id_producto = p_id_producto;
+    DELETE FROM Resenas WHERE id_producto = p_id_producto;
     SELECT 'Reseñas eliminadas exitosamente.' AS Mensaje;
 END$$
 DELIMITER ;
